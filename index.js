@@ -5,10 +5,10 @@ const chokidar = require('chokidar');
 
 const start = debounce(() => {
   console.log('STARTING USERS PROGRAM');
-});
+}, 100);
 
 chokidar
   .watch('.')
-  .on('add', () => console.log('File added'))
+  .on('add', start)
   .on('change', () => console.log('File changed'))
   .on('unlink', () => console.log('File unlink'));
