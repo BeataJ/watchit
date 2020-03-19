@@ -1,6 +1,11 @@
 #!/usr/bin/env node
 
+const debounce = require('lodash.debounce');
 const chokidar = require('chokidar');
+
+const start = debounce(() => {
+  console.log('STARTING USERS PROGRAM');
+});
 
 chokidar
   .watch('.')
