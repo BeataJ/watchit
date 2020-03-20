@@ -11,7 +11,11 @@ program
   .action(async ({ filename }) => {
     const name = filename || index.js;
 
-    await fs.promises.access(name);
+    try {
+      await fs.promises.access(name);
+    } catch (err) {
+      throw new Error(`Could not fond the file ${name}`);
+    }
 
     const start = debounce(() => {
       console.log('STARTING USERS PROGRAM');
