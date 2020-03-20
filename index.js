@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
-// const debounce = require('lodash.debounce');
-// const chokidar = require('chokidar');
+const debounce = require('lodash.debounce');
+const chokidar = require('chokidar');
 const program = require('caporal');
 
 program
