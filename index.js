@@ -15,8 +15,8 @@ program
     chokidar
       .watch('.')
       .on('add', start)
-      .on('change', () => console.log('File changed'))
-      .on('unlink', () => console.log('File unlink'));
+      .on('change', start)
+      .on('unlink', start);
   });
 
 program.parse(process.argv);
