@@ -8,6 +8,8 @@ program
   .version('0.0.1')
   .argument('[filename]', 'Name of a file is execute')
   .action(({ filename }) => {
+    const name = filename || index.js;
+
     const start = debounce(() => {
       console.log('STARTING USERS PROGRAM');
     }, 100);
