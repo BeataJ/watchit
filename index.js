@@ -7,7 +7,7 @@ const program = require('caporal');
 program
   .version('0.0.1')
   .argument('[filename]', 'Name of a file is execute')
-  .action(args => {
+  .action(({ filename }) => {
     const start = debounce(() => {
       console.log('STARTING USERS PROGRAM');
     }, 100);
