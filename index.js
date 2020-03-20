@@ -8,17 +8,15 @@ program
   .version('0.0.1')
   .argument('[filename]', 'Name of a file is execute')
   .action(args => {
-    console.log(args);
+    const start = debounce(() => {
+      console.log('STARTING USERS PROGRAM');
+    }, 100);
+
+    chokidar
+      .watch('.')
+      .on('add', start)
+      .on('change', () => console.log('File changed'))
+      .on('unlink', () => console.log('File unlink'));
   });
 
 program.parse(process.argv);
-
-// const start = debounce(() => {
-//   console.log('STARTING USERS PROGRAM');
-// }, 100);
-
-// chokidar
-//   .watch('.')
-//   .on('add', start)
-//   .on('change', () => console.log('File changed'))
-//   .on('unlink', () => console.log('File unlink'));
