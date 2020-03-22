@@ -9,7 +9,7 @@ program
   .version('0.0.1')
   .argument('[filename]', 'Name of a file is execute')
   .action(async ({ filename }) => {
-    const name = filename || index.js;
+    const name = filename || 'index.js';
 
     try {
       await fs.promises.access(name);
