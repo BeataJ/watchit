@@ -19,7 +19,7 @@ program
     }
 
     const start = debounce(() => {
-      console.log('STARTING USERS PROGRAM');
+      spawn('node', [name], { stdio: 'inherit' });
     }, 100);
 
     chokidar
